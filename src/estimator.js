@@ -6,7 +6,7 @@ const requestedTime = (periodType, timeToElapse) => {
     case 'weeks':
       return 2 ** Math.floor((timeToElapse * 7) / 3);
     case 'months':
-      return Math.floor(2 ** ((timeToElapse * 30) / 3));
+      return (2 ** ((timeToElapse * 30) / 3));
     default:
       return timeToElapse;
   }
@@ -40,10 +40,10 @@ const covid19ImpactEstimator = (data) => {
   );
 
   // Total Hospital Beds
-  impact.hospitalBedsByRequestedTime = Math.round(
+  impact.hospitalBedsByRequestedTime = Math.ceil(
     (data.totalHospitalBeds * 0.35) - impact.severeCasesByRequestedTime
   );
-  severeImpact.hospitalBedsByRequestedTime = Math.round(
+  severeImpact.hospitalBedsByRequestedTime = Math.ceil(
     (data.totalHospitalBeds * 0.35) - severeImpact.severeCasesByRequestedTime
   );
 
@@ -76,5 +76,5 @@ const covid19ImpactEstimator = (data) => {
 };
 
 
-export default covid19ImpactEstimator;
-// module.exports = covid19ImpactEstimator;
+// export default covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;

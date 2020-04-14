@@ -1,0 +1,18 @@
+body {
+  font-family: 'Montserrat', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.theme-color {
+  background: #FF6A00;
+  background: -webkit-linear-gradient(90.6deg, #FF6A00 0.42%, #EE0979 99.69%);
+  background: linear-gradient(90.6deg, #FF6A00 0.42%, #EE0979 99.69%);
+}
+.theme-shadow {
+  box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.15);
+}
+input::placeholder{
+  color: #ccc
+}
+select > option{
+  background: #FF6A00;
+}

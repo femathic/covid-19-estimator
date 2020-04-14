@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="./assets/logo192.png" />
+  <link rel="manifest" href="./assets/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="COVID-19 Estimator is one-of-a-kind project to help societies and leaders prepare for the real problems of COVID-19, which is its impact on lives, our health systems and the economy." />
+  <meta property="og:title" content="🦠COVID-19 Estimator | #BuildForSDG Challenge 2020" />
+  <meta property="og:site_name" content="🦠COVID-19 Estimator" />
+  <meta property="og:url" content="https://femathic.github.com/covid-19estimator" />
+  <meta property="og:image" content="./assets/logo192.png" />
+  <meta property="og:description" content="COVID-19 Estimator is one-of-a-kind project to help societies and leaders prepare for the real problems of COVID-19, which is its impact on lives, our health systems and the economy." />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+      rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://codefog.github.io/jquery-gradientify/jquery.gradientify.min.js"></script>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/index.css">
+  <title>🦠COVID-19 Estimator | A COVID-19 impact estimator</title>
+</head>
+<body class="m-0 p-0 theme-color gradientify">
+  <div class="flex flex-wrap min-h-screen w-full items-center justify-center md:justify-end" id="firstPage" >
+    <section class="w-full md:w-1/2 w-full py-8 pl-0 xl:pl-56 flex flex-col items-center justify-center text-white">
+      <img src="./assets/hero_image.png" alt="COVID-19" style="max-width: 300px;" />
+      <header class="text-center">
+        <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap sm:text-sm" style="font-size: 80px;">COVID-19</h1>
+        <h2 class="font-medium -m-4" style="font-size: 50px;">Estimator</h2>
+      </header>
+      <p class="font-medium text-lg mt-12">And the people stayed at home...</p>
+      <div class="flex flex-wrap items-center justify-around mt-3 w-100">
+        <p class="font-normal text-sm">#StayHome</p>
+        <p class="font-normal text-sm ml-6">#StaySafe</p>
+        <p class="font-normal text-sm ml-6">#WashHands</p>
+        <p class="font-normal text-sm ml-6">#WearMask</p>
+      </div>
+    </section>
+
+    <section class="w-full md:w-1/2 flex items-center justify-center md:justify-start text-white py-5 px-2 md:px-5">
+      <form class="md:w-1/2-screen p-5 max-w-6xl shadow-lg md:rounded-lg theme-color theme-shadow gradientify" id="covid-form">
+        <div>
+          <h3 class="font-bold text-xl">Estimate the impact of COVID-19</h3>
+          <hr class="rounded-lg w-1/3" style="border: 2px solid white"/>
+        </div>
+        <fieldset>
+          <div class="flex-col flex py-3">
+            <label for="continent" class="pt-3 text-gray-100 text-sm font-bold">Your Region:</label>
+            <select id="continents" class="p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+              style="border-bottom: 1px solid white;">
+              <option value="Africa">Africa</option>
+              <option value="Asia">Asia</option>
+              <option value="North America">North America</option>
+              <option value="South America">South America</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Europe">Europe</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="flex-col flex py-3">
+            <label for="data-population" class="pt-3 text-gray-100 text-sm font-bold">Population of your country:</label>
+            <input name="data-population" id="data-population" type="number" class="p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+              style="border-bottom: 1px solid white;" placeholder="e.g 10512678" data-population  pattern="[^\-]+" min="1"
+                  onpaste="return false" required>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="flex-col flex py-3">
+            <label for="reported-case" class="pt-3 text-gray-100 text-sm font-bold">Number of reported case:</label>
+            <input name="reported-cases" id="reported-cases" type="number" class="p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+              style="border-bottom: 1px solid white;" placeholder="e.g 500" data-reported-cases pattern="[^\-]+" min="1"
+                  onpaste="return false" required>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="flex-col flex py-3">
+            <label for="time-to-elapse" class="pt-3 text-gray-100 text-sm font-bold">Time to estimate for:</label>
+            <div id="time" class="flex py-3">
+              <input type="number" name="time-to-elapse" id="time-to-elapse" class=" md:w-1/2 inline-block p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+                style="border-bottom: 1px solid white;" placeholder="e.g 28" type="number" data-time-to-elapse pattern="[^\-]+" min="1"
+                  onpaste="return false" required>
+              <select class=" md:w-1/2 inline-block p-1 -m-1 ml-3 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+                style="border-bottom: 1px solid white;" name="period-type" id="period-type" data-period-type>
+                <option value="days">day(s)</option>
+                <option value="weeks">week(s)</option>
+                <option value="months">month(s)</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="flex-col flex py-3">
+            <label for="total-hospital-beds" class="pt-3 text-gray-100 text-sm font-bold">Available hospital beds:</label>
+            <input name="total-hospital-beds" id="total-hospital-beds" type="number" class="p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+              style="border-bottom: 1px solid white;" placeholder="e.g 12678" data-total-hospital-beds
+                pattern="[^\-]+" min="1" onpaste="return false" required>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="mt-2 flex justify-end">
+            <input type="submit" class="py-3 px-12 text-white theme-color shadow-lg hover:shadow-none gradientify" value"Submit" data-go-estimate />
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+  <div id="secondPage" class="hidden">
+    <div class="flex items-center justify-center text-white pt-8" >
+      <img src="./assets/hero_image.png" class="mt-4" alt="COVID-19" style="max-width: 150px;" />
+      <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap ml-5" style="font-size: 30px;">COVID-19 Estimator</h1>
+    </div>
+    <div class="flex flex-wrap w-full justify-center px-5 py-8" >
+      <section class="w-full md:w-2/5 px-2 py-8 max-w-6xl rounded-lg text-white theme-color theme-shadow gradientify">
+        <h3 class="font-bold text-lg ml-2">Mild Case scenario (mild impact)</h3>
+        <hr class="rounded-lg w-1/3 ml-2" style="border: 2px solid white"/>
+        <p class="font-normal ml-3 text-sm mt-5">Currently Infected:  
+          <b> &nbsp;<span id="i-current">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Infected people by requested time:  
+          <b> &nbsp;<span id="i-infected">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Severe cases by requested time:
+          <b> &nbsp;<span id="i-severe">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Available hospital beds by requested time:  
+          <b> &nbsp;<span id="i-bed">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Cases for ICU by requested time:  
+          <b> &nbsp;<span id="i-icu">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Cases for Ventilator by requested time: 
+          <b> &nbsp;<span id="i-vent">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Dollars in flight: 
+          <b> &nbsp; $<span id="i-dollar">1,056</span></b>
+        </p>
+      </section>
+      <section class="w-full md:w-2/5 ml-0 md:ml-8 mt-5 md:mt-0 px-2 py-8 max-w-6xl rounded-lg text-white theme-color theme-shadow gradientify">
+        <h3 class="font-bold text-lg ml-2">Worst Case scenario (severe impact)</h3>
+        <hr class="rounded-lg w-1/3 ml-2" style="border: 2px solid white"/>
+        <p class="font-normal ml-3 text-sm mt-5">Currently Infected:  
+          <b> &nbsp;<span id="s-current">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Infected people by requested time:  
+          <b> &nbsp;<span id="s-infected">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Severe cases by requested time:
+          <b> &nbsp;<span id="s-severe">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Available hospital beds by requested time:  
+          <b> &nbsp;<span id="s-bed">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Cases for ICU by requested time:  
+          <b> &nbsp;<span id="s-icu">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Cases for Ventilator by requested time: 
+          <b> &nbsp;<span id="s-vent">1,056</span></b>
+        </p>
+        <p class="font-normal ml-3 text-sm mt-5">Dollars in flight: 
+          <b> &nbsp; $<span id="s-dollar">1,056</span></b>
+        </p>
+      </section>
+    </div>
+    <div class="flex items-center justify-center text-white py-8" >
+      <button type="submit" class="py-3 px-12 text-white theme-color shadow-lg hover:shadow-none gradientify" onclick="window.location.reload();"> 
+        Go Back 
+      </button>
+    </div>
+  </div>
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script src="./assets/bundle.js"></script>
+  <script src="./assets/myEstimator.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".gradientify").gradientify({
+        gradients: [
+          { start: [255, 106, 0], stop: [238, 9, 121] },
+          { start: [238, 9, 121], stop: [255, 106, 0] },
+          { start: [17, 153, 142], stop: [56, 239, 125] },
+          { start: [238, 9, 121], stop: [17, 153, 142] }
+        ],
+        transition_time: 8
+      });
+    });
+  </script>
+</body>
+</html>

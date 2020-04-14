@@ -1,5 +1,5 @@
 # #BuildForSDG Cohort-1 JavaScript Assessment
-
+Site is live on:  https://mycovid19estimator.netlify.com/ 
 > Build an overly simplified COVID-19 infection impact estimator
 
 This is an eligibility assessment for the 2020 [#BuildforSDG](https://buildforsdg.andela.com/) program

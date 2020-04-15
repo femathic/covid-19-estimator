@@ -26,22 +26,22 @@
 <body class="m-0 p-0 theme-color gradientify">
   <div class="flex flex-wrap min-h-screen w-full items-center justify-center md:justify-end" id="firstPage" >
     <section class="w-full md:w-1/2 w-full py-8 pl-0 xl:pl-56 flex flex-col items-center justify-center text-white">
-      <img src="./assets/hero_image.png" alt="COVID-19" style="max-width: 300px;" />
+      <img src="./assets/hero_image.png" alt="COVID-19" id="COVID-19" />
       <header class="text-center">
-        <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap sm:text-sm" style="font-size: 80px;">COVID-19</h1>
-        <h2 class="font-medium -m-4" style="font-size: 50px;">Estimator</h2>
+        <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap">COVID-19</h1>
+        <h2 class="font-medium -m-4">Estimator</h2>
       </header>
-      <p class="font-medium text-lg mt-12">And the people stayed at home...</p>
-      <div class="flex flex-wrap items-center justify-around mt-3 w-100">
-        <p class="font-normal text-sm">#StayHome</p>
-        <p class="font-normal text-sm ml-6">#StaySafe</p>
-        <p class="font-normal text-sm ml-6">#WashHands</p>
-        <p class="font-normal text-sm ml-6">#WearMask</p>
+      <p class="font-medium text-base md:text-lg mt-12">And the people stayed at home...</p>
+      <div class="flex flex-wrap items-center justify-around mt-3 w-100 p-0">
+        <p class="font-normal text-xs md:text-sm">#StayHome</p>
+        <p class="font-normal text-xs md:text-sm ml-2 md:ml-6">#StaySafe</p>
+        <p class="font-normal text-xs md:text-sm ml-2 md:ml-6">#WashHands</p>
+        <p class="font-normal text-xs md:text-sm ml-2 md:ml-6 hidden md:inline">#WearMask</p>
       </div>
     </section>
 
     <section class="w-full md:w-1/2 flex items-center justify-center md:justify-start text-white py-5 px-2 md:px-5">
-      <form class="md:w-1/2-screen p-5 max-w-6xl shadow-lg md:rounded-lg theme-color theme-shadow gradientify" id="covid-form">
+      <form class="w-5/6 md:w-1/2-screen p-5 max-w-6xl shadow-lg md:rounded-lg theme-color theme-shadow gradientify" id="covid-form">
         <div>
           <h3 class="font-bold text-xl">Estimate the impact of COVID-19</h3>
           <hr class="rounded-lg w-1/3" style="border: 2px solid white"/>
@@ -80,11 +80,11 @@
         <fieldset>
           <div class="flex-col flex py-3">
             <label for="time-to-elapse" class="pt-3 text-gray-100 text-sm font-bold">Time to estimate for:</label>
-            <div id="time" class="flex py-3">
+            <div id="time" class="flex flex-wrap md:flex-no-wrap py-3">
               <input type="number" name="time-to-elapse" id="time-to-elapse" class=" md:w-1/2 inline-block p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
                 style="border-bottom: 1px solid white;" placeholder="e.g 28" type="number" data-time-to-elapse pattern="[^\-]+" min="1"
                   onpaste="return false" required>
-              <select class=" md:w-1/2 inline-block p-1 -m-1 ml-3 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
+              <select class=" md:w-1/2 inline-block p-1 mt-4 md:-m-1 ml-1 md:ml-3 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
                 style="border-bottom: 1px solid white;" name="period-type" id="period-type" data-period-type>
                 <option value="days">day(s)</option>
                 <option value="weeks">week(s)</option>
@@ -94,7 +94,7 @@
           </div>
         </fieldset>
         <fieldset>
-          <div class="flex-col flex py-3">
+          <div class="flex-col flex py-0 md:py-3">
             <label for="total-hospital-beds" class="pt-3 text-gray-100 text-sm font-bold">Available hospital beds:</label>
             <input name="total-hospital-beds" id="total-hospital-beds" type="number" class="p-1 -m-1 ml-1 text-sm font-light bg-transparent outline-none hover:shadow-lg" 
               style="border-bottom: 1px solid white;" placeholder="e.g 12678" data-total-hospital-beds
@@ -111,8 +111,8 @@
   </div>
   <div id="secondPage" class="hidden">
     <div class="flex items-center justify-center text-white pt-8" >
-      <img src="./assets/hero_image.png" class="mt-4" alt="COVID-19" style="max-width: 150px;" />
-      <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap ml-5" style="font-size: 30px;">COVID-19 Estimator</h1>
+      <img src="./assets/hero_image.png" class="mt-4" alt="COVID-19" id="s-image"/>
+      <h1 class="font-bold -m-3 mt-1 whitespace-no-wrap ml-1 md:ml-5" id="s-text">COVID-19 Estimator</h1>
     </div>
     <div class="flex flex-wrap w-full justify-center px-5 py-8" >
       <section class="w-full md:w-2/5 px-2 py-8 max-w-6xl rounded-lg text-white theme-color theme-shadow gradientify">

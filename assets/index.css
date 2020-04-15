@@ -16,3 +16,16 @@ input::placeholder{
 select > option{
   background: #FF6A00;
 }
+#COVID-19 {max-width: 300px;}
+#s-image {max-width: 150px;}
+#s-text {font-size: 30px;}
+header  h1 {font-size: 80px;}
+header  h2 {font-size: 50px;}
+
+@media screen and (max-width: 480px) {
+  #COVID-19 {max-width: 200px;}
+  #s-image {max-width: 60px;}
+  #s-text {font-size: 18px;}
+  header  h1 {font-size: 50px;}
+  header  h2 {font-size: 35px;}
+}
